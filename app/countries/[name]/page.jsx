@@ -8,11 +8,12 @@ const CountryDetailsPage = ({ params }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch(`https://restcountries.com/v3.1/name/${params.name}`)
+        const res = await fetch(`https://restcountries.com/v3.1/name/${params.name.toLowerCase()}`)
 
         .then((res) => res.json())
         .then((data) => {
           setCurrentCountry(data)
+          console.log(data[0].name)
         })
       } catch (err) {
         console.log;
@@ -22,7 +23,13 @@ const CountryDetailsPage = ({ params }) => {
   }, []);
   
   return (
-    <div>This is {currentCountry.name.common}</div>
+    <>
+      {currentCountry.map((country, index) => (
+        <div key={index}>
+          <p>{country.name.common}</p>
+        </div>
+      ))}
+    </>
   );
 }
  
