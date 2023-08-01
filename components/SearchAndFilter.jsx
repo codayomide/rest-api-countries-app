@@ -6,8 +6,8 @@ const SearchAndFilter = () => {
       </div>
       
       <div className="filterMenuContainer">
-        <select className="block appearance-none w-[80%] bg-white shadow-md mb-10 p-4 rounded leading-tight outline-none">
-          <option value="" disabled selected>Filter by Region</option>
+        <select defaultValue="" className="block appearance-none w-[80%] bg-white shadow-md mb-10 p-4 rounded leading-tight outline-none">
+          <option value="" disabled>Filter by Region</option>
           <option value="africa">Africa</option>
           <option value="america">America</option>
           <option value="asia">Asia</option>
