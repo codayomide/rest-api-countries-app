@@ -1,5 +1,6 @@
 "use client"
 
+import CountryDetails from "@components/CountryDetails";
 import { useEffect, useState } from "react";
 
 const CountryDetailsPage = ({ params }) => {
@@ -23,13 +24,9 @@ const CountryDetailsPage = ({ params }) => {
   }, []);
   
   return (
-    <>
-      {currentCountry.map((country, index) => (
-        <div key={index}>
-          <p>{country.name.common}</p>
-        </div>
-      ))}
-    </>
+    <div className="countryDetailsPage">
+      <CountryDetails countryData={currentCountry} />
+    </div>
   );
 }
  
