@@ -19,6 +19,11 @@ module.exports = {
         neutralWhite: "hsl(0, 0%, 100%)"
       }
     },
+
+    screens: {
+      "xs" : '470px',
+      "2xs": '0px'
+    }
   },
   plugins: [],
 }

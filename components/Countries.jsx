@@ -45,7 +45,7 @@ const Countries = ({ countries }) => {
               
               <p>
                 <span className="font-semibold">Capital: </span>
-                <span>Berlin</span>
+                <span>{country.capital}</span>
               </p>
             </div>
           </div>
