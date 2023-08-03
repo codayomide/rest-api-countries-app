@@ -1,4 +1,5 @@
 "use client"
+
 import Countries from "@components/Countries";
 import SearchAndFilter from "@components/SearchAndFilter";
 import useFetch from "@components/useFetch";
