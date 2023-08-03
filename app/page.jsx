@@ -26,7 +26,7 @@ const Home = () => {
   }, []);
 
   return ( 
-    <div className="Home bg-lmBgLightGray w-full h-fit px-4 py-6">
+    <div className="Home bg-lmBgLightGray w-full h-fit px-4 xs:px-6 sm:px-12 xl:px-[65px] py-6">
       <SearchAndFilter />
 
       { isPending && <div>Loading...</div> }
