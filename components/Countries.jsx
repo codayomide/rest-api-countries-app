@@ -18,7 +18,7 @@ const Countries = ({ countries }) => {
     <div className="w-full flex flex-col items-center sm:flex-row flex-wrap justify-between py-9">
       {countries.map((country, index) => (
         <Link 
-          href={`/countries/${lowerCase(country.name.common)}`}
+          href={`/countries/${lowerCase(country.name)}`}
           className="country__wrapper bg-neutralWhite shadow-md flex flex-col w-[200px] ss:w-[250px] xs:w-[300px] md:w-[280px] aspect-[0.8] rounded-md mb-9 overflow-hidden" key={index}
         >
           <img 
@@ -30,7 +30,7 @@ const Countries = ({ countries }) => {
           />
           
           <div className="flex flex-col flex-grow justify-center xs:justify-normal xs:mt-5 px-2">
-            <h1 className="font-extrabold text-lg xs:text-3xl my-1 xs:my-4">{country.name.common}</h1>
+            <h1 className="font-extrabold text-lg xs:text-3xl my-1 xs:my-4">{country.common}</h1>
 
             <div className="text-sm">
               <p>
