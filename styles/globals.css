@@ -20,4 +20,14 @@ input::-webkit-search-cancel-button {
     display: inline;
     margin-right: 0.3rem;
   }
+
+  .home__details-text {
+    font-weight: 600;
+  }
+
+  @screen sm {
+    .home__details-text {
+      font-size: 18px;
+    }
+  }
 }
