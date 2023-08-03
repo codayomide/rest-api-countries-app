@@ -14,3 +14,10 @@
 input::-webkit-search-cancel-button {
   display: none;
 }
+
+@layer components {
+  .header_icons {
+    display: inline;
+    margin-right: 0.3rem;
+  }
+}
