@@ -9,7 +9,7 @@ const CountryDetailsPage = ({ params }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch(`https://restcountries.com/v3.1/name/${params.name.toLowerCase()}`)
+        const res = await fetch(`https://restcountries.com/v2/name/${params.name.toLowerCase()}`)
 
         .then((res) => res.json())
         .then((data) => {
