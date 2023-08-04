@@ -30,7 +30,7 @@ const Countries = ({ countries }) => {
           />
           
           <div className="flex flex-col flex-grow justify-center xs:justify-normal xs:mt-5 px-2">
-            <h1 className="font-extrabold text-lg xs:text-3xl my-1 xs:my-4">{country.common}</h1>
+            <h1 className="font-extrabold text-lg xs:text-3xl my-1 xs:my-4">{country.name}</h1>
 
             <div className="text-sm">
               <p>
