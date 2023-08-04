@@ -25,6 +25,14 @@ input::-webkit-search-cancel-button {
     font-weight: 600;
   }
 
+  .country__details-text {
+    font-size: 14px;
+  }
+
+  .country__details-text > span:first-child {
+    font-weight: 600;
+  }
+
   @screen sm {
     .home__details-text {
       font-size: 18px;
