@@ -1,10 +1,17 @@
 import Link from 'next/link';
 import { BsArrowLeft } from 'react-icons/bs';
+import BorderCountries from './BorderCountries';
+import { useRouter } from 'next/navigation';
 
 const CountryDetails = ({ countryData }) => {
+  const router = useRouter();
+
+  const goBack = () => {
+    router.back();
+  };
   return (
     <div className="p-4 xs:p-6 sm:p-12 xl:p-[65px]">
-      <Link href="/" className="text-lmVeryDarkBlue bg-neutralWhite shadow-lg px-5 py-1"><BsArrowLeft className="inline mr-1" /> Back</Link>
+      <button onClick={goBack} className="text-lmVeryDarkBlue bg-neutralWhite shadow-lg px-5 py-1"><BsArrowLeft className="inline mr-1" /> Back</button>
 
       {countryData.map((country, index) => (
         <div key={index} className="md:flex md:flex-row md:my-12">
@@ -61,14 +68,8 @@ const CountryDetails = ({ countryData }) => {
                   </p>
                 </div>
               </div>
-              <div className="md:flex md:flex-row md:items-center">
-                <h1 className="font-semibold mb-2 md:mr-4">Border Countries:</h1>
-                <div className="flex flex-row flex-wrap">
-                  {country.borders && country.borders.map((borderCountry, index) => (
-                    <button key={index} className="text-lmVeryDarkBlue bg-neutralWhite shadow-lg mr-2 mb-4 px-4 py-1">{borderCountry}</button>
-                  ))}
-                </div>
-              </div>
+              
+              <BorderCountries individualCountry={country} />
             </div>
           </div>
         </div>
