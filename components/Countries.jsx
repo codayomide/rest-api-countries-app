@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
-import useFetch from './useFetch';
 import Link from 'next/link';
 
 const Countries = ({ countries }) => {

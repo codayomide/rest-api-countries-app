@@ -2,7 +2,6 @@
 
 import Countries from "@components/Countries";
 import SearchAndFilter from "@components/SearchAndFilter";
-import useFetch from "@components/useFetch";
 import { useState, useEffect } from "react";
 
 const Home = () => {
