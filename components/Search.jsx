@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { AiOutlineSearch } from 'react-icons/ai/';
 import { CountriesContext } from '@app/page';
 
@@ -15,21 +15,20 @@ const Search = () => {
 
   const handleSearch = (e) => {
     setsearchInput(e.target.value);
-    searchFunction(searchInput);     
     console.log(filteredData);
   }
 
-  const searchFunction = (query) => {
-    if (query !== "") {
-      const filteredResults = countries.filter((country) => lowerCase(country.name).includes(lowerCase(searchInput)))
+  useEffect(() => {
+    const searchFunction = (query) => {
+      const filteredResults = countries.filter((country) => 
+        lowerCase(country.name).includes(lowerCase(searchInput))
+      );
       setFilteredData(filteredResults);
       setIsFiltered(true);
-    } else {
-      setIsFiltered(false);
-      setFilteredData()
-      console.log('empty');
     }
-  }
+
+    searchFunction(searchInput);  
+  }, [searchInput, countries]);
 
   return (
     <div className="searchContainer relative w-full md:w-[350px] mb-10 md:mb-0">
@@ -40,6 +39,7 @@ const Search = () => {
           placeholder="Search for a country..." 
           className="block appearance-none w-full bg-white shadow-md text-gray-700 text-[13px] py-4 px-4 pl-[4rem] rounded leading-tight outline-none object-cover"
           value={searchInput}
+          onChange={handleSearch}
         />
       </div>
   );
