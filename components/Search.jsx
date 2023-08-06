@@ -5,10 +5,30 @@ import { CountriesContext } from '@app/page';
 const Search = () => {
   const [searchInput, setsearchInput] = useState('');
 
-  const { isFiltered, setIsFiltered, countries } = useContext(CountriesContext)
+  const { isFiltered, setIsFiltered, countries, filteredData, setFilteredData } = useContext(CountriesContext);
 
-  const handleSearch = () => {
-    console.log(searchInput);
+  const lowerCase = (text) => {
+    const lowerCaseText = text.toLowerCase();
+    
+    return lowerCaseText;
+  }
+
+  const handleSearch = (e) => {
+    setsearchInput(e.target.value);
+    searchFunction(searchInput);     
+    console.log(filteredData);
+  }
+
+  const searchFunction = (query) => {
+    if (query !== "") {
+      const filteredResults = countries.filter((country) => lowerCase(country.name).includes(lowerCase(searchInput)))
+      setFilteredData(filteredResults);
+      setIsFiltered(true);
+    } else {
+      setIsFiltered(false);
+      setFilteredData()
+      console.log('empty');
+    }
   }
 
   return (
@@ -20,7 +40,6 @@ const Search = () => {
           placeholder="Search for a country..." 
           className="block appearance-none w-full bg-white shadow-md text-gray-700 text-[13px] py-4 px-4 pl-[4rem] rounded leading-tight outline-none object-cover"
           value={searchInput}
-          onChange={(e) => setsearchInput(e.target.value)}
         />
       </div>
   );
