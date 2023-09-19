@@ -1,5 +1,6 @@
 "use client"
 
+import React from "react";
 import Countries from "@components/Countries";
 import SearchAndFilter from "@components/SearchAndFilter";
 import { useState, useEffect, createContext } from "react";
@@ -15,7 +16,7 @@ const Home = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch('https://restcountries.com/v2/all')
+        await fetch('https://restcountries.com/v2/all')
 
         .then((res) => res.json())
         .then((data) => {
