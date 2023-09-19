@@ -1,17 +1,20 @@
+import React from 'react';
+
 import { useContext, useEffect, useState } from 'react';
 import { AiOutlineSearch } from 'react-icons/ai/';
 import { CountriesContext } from '@app/page';
+import lowerCase from '@utils/utils';
 
 const Search = () => {
   const [searchInput, setsearchInput] = useState('');
 
-  const { isFiltered, setIsFiltered, countries, filteredData, setFilteredData } = useContext(CountriesContext);
+  const { setIsFiltered, countries, filteredData, setFilteredData } = useContext(CountriesContext);
 
-  const lowerCase = (text) => {
-    const lowerCaseText = text.toLowerCase();
+  // const lowerCase = (text) => {
+  //   const lowerCaseText = text.toLowerCase();
     
-    return lowerCaseText;
-  }
+  //   return lowerCaseText;
+  // }
 
   const handleSearch = (e) => {
     setsearchInput(e.target.value);
