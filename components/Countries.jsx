@@ -1,18 +1,10 @@
-import Image from 'next/image';
-import { useEffect, useState } from 'react';
+import React from 'react';
+// import Image from 'next/image';
+// import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import lowerCase from '@utils/utils';
 
 const Countries = ({ countries }) => {
-  const lowerCase = (text) => {
-    // // Remove whitespace using regular expression and replace with an empty string
-    // const noWhitespaceText = text.replace(/\s+/g, '');
-    
-    // Convert the text to lowercase
-    const lowerCaseText = text.toLowerCase();
-    
-    return lowerCaseText;
-  }
-
   return (
     <div className="w-full flex flex-col items-center sm:flex-row flex-wrap justify-between py-9">
       {countries.map((country, index) => (

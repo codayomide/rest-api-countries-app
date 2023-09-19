@@ -1,5 +1,6 @@
 import Filter from "./Filter";
 import Search from "./Search";
+import React from "react";
 
 const SearchAndFilter = () => {
   return (

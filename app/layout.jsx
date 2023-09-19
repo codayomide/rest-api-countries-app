@@ -1,5 +1,6 @@
 import Header from '@components/Header';
 import '@styles/globals.css'
+import React from 'react';
 
 export const metadata = {
   title: "Rest Countries App",
@@ -18,5 +19,5 @@ const RootLayout = ({ children }) => {
     </html>
   );
 }
- 
+
 export default RootLayout;
