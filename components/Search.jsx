@@ -10,12 +10,6 @@ const Search = () => {
 
   const { setIsFiltered, countries, filteredData, setFilteredData } = useContext(CountriesContext);
 
-  // const lowerCase = (text) => {
-  //   const lowerCaseText = text.toLowerCase();
-    
-  //   return lowerCaseText;
-  // }
-
   const handleSearch = (e) => {
     setsearchInput(e.target.value);
     console.log(filteredData);
