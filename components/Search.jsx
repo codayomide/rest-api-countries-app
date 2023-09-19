@@ -24,7 +24,7 @@ const Search = () => {
       setIsFiltered(true);
     }
 
-    searchFunction(searchInput);  
+    searchFunction();  
   }, [searchInput, countries]);
 
   return (
