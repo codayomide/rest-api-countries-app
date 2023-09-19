@@ -1,5 +1,6 @@
 "use client"
 
+import React from "react";
 import CountryDetails from "@components/CountryDetails";
 import { useEffect, useState } from "react";
 
@@ -9,7 +10,7 @@ const CountryDetailsPage = ({ params }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch(`https://restcountries.com/v2/name/${params.name.toLowerCase()}`)
+        await fetch(`https://restcountries.com/v2/name/${params.name.toLowerCase()}`)
 
         .then((res) => res.json())
         .then((data) => {
