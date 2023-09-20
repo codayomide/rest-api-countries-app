@@ -32,7 +32,7 @@ const Home = () => {
 
   return ( 
     <CountriesContext.Provider value={{ isFiltered, setIsFiltered, countries, filteredData, setFilteredData }}>
-      <div className="Home bg-lmBgLightGray w-full h-fit px-4 xs:px-6 sm:px-12 xl:px-[65px] py-6">
+      <div className="Home bg-lmBgLightGray dark:bg-dmBgVeryDarkBlue w-full h-fit px-4 xs:px-6 sm:px-12 xl:px-[65px] py-6">
         <SearchAndFilter data={countries} />
         { isPending && <div>Loading...</div> }
         { filteredData && <Countries countries={filteredData} /> }
