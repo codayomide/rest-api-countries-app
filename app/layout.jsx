@@ -1,6 +1,7 @@
 import Header from '@components/Header';
 import '@styles/globals.css'
 import React from 'react';
+import ThemeContext from './providers';
 
 export const metadata = {
   title: "Rest Countries App",
@@ -13,7 +14,7 @@ const RootLayout = ({ children }) => {
       <body>
         <Header />
         <main className="app">
-          {children}
+          <ThemeContext>{children}</ThemeContext>
         </main>
       </body>
     </html>
