@@ -11,7 +11,7 @@ export const metadata = {
 const RootLayout = ({ children }) => {
   return (
     <html lang='en'>
-      <body>
+      <body className="bg-dmBgVeryDarkBlue">
         <Header />
         <main className="app">
           <ThemeContext>{children}</ThemeContext>

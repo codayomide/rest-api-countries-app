@@ -10,7 +10,7 @@ const Countries = ({ countries }) => {
       {countries.map((country, index) => (
         <Link 
           href={`/countries/${lowerCase(country.name)}`}
-          className="country__wrapper bg-neutralWhite shadow-md flex flex-col w-[200px] ss:w-[250px] xs:w-[300px] md:w-[280px] aspect-[0.8] rounded-md mb-9 overflow-hidden" key={index}
+          className="country__wrapper bg-neutralWhite dark:bg-dmBlue shadow-md flex flex-col w-[200px] ss:w-[250px] xs:w-[300px] md:w-[280px] aspect-[0.8] rounded-md mb-9 overflow-hidden" key={index}
         >
           <img 
             src={country.flags.png} 

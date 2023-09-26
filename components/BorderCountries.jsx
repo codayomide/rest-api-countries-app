@@ -44,7 +44,7 @@ const BorderCountries = ({ individualCountry }) => {
                     allCountries
                   )}`}
                   key={index}
-                  className="text-lmVeryDarkBlue bg-neutralWhite shadow-lg mr-2 mb-4 px-4 py-1"
+                  className="text-lmVeryDarkBlue bg-neutralWhite dark:bg-dmBlue dark:text-neutralWhite shadow-lg rounded-sm mr-2 mb-4 px-4 py-1"
                 >
                   {getFullName(borderCountry, allCountries)}
                 </Link>

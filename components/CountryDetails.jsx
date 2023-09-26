@@ -12,7 +12,7 @@ const CountryDetails = ({ countryData }) => {
   };
   return (
     <div className="p-4 xs:p-6 sm:p-12 xl:p-[65px]">
-      <button onClick={goBack} className="text-lmVeryDarkBlue bg-neutralWhite shadow-lg px-5 py-1"><BsArrowLeft className="inline mr-1" /> Back</button>
+      <button onClick={goBack} className="text-lmVeryDarkBlue bg-neutralWhite dark:text-neutralWhite dark:bg-dmBlue shadow-lg rounded-sm px-5 py-1"><BsArrowLeft className="inline mr-1" /> Back</button>
 
       {countryData.map((country, index) => (
         <div key={index} className="md:flex md:flex-row md:my-12">

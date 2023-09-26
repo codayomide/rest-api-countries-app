@@ -33,7 +33,7 @@ const Filter = () => {
     <div className="filterMenuContainer relative w-[70%] ss:w-[55%] md:w-[200px]">
       <select
         onChange={handleSelectChange}
-        className="block appearance-none w-full bg-white dark:bg-dmBlue shadow-md px-4 py-3 rounded leading-tight outline-none focus:outline-none"
+        className="block appearance-none w-full bg-white dark:bg-dmBlue dark:border-none shadow-md px-4 py-3 rounded leading-tight outline-none focus:outline-none"
       >
         <option value="">Filter by Region</option>
         <option value="africa">Africa</option>
