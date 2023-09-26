@@ -29,12 +29,12 @@ const Search = () => {
 
   return (
     <div className="searchContainer relative w-full md:w-[350px] mb-10 md:mb-0">
-      <AiOutlineSearch className="text-lmDarkGray text-[23px] absolute top-[50%] translate-y-[-50%] left-6 " />
+      <AiOutlineSearch className="text-lmDarkGray dark:text-neutralWhite text-[23px] absolute top-[50%] translate-y-[-50%] left-6 " />
 
       <input
         type="search" 
         placeholder="Search for a country..." 
-        className="block appearance-none w-full bg-white shadow-md text-gray-700 text-[13px] py-4 px-4 pl-[4rem] rounded leading-tight outline-none object-cover"
+        className="block appearance-none w-full bg-white dark:bg-dmBlue shadow-md text-gray-700 dark:text-neutralWhite dark:border-none text-[13px] py-4 px-4 pl-[4rem] rounded leading-tight outline-none focus:outline-none object-cover dark:placeholder:text-neutralWhite"
         value={searchInput}
         onChange={handleSearch}
       />
