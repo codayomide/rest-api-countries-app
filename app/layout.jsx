@@ -11,12 +11,14 @@ export const metadata = {
 const RootLayout = ({ children }) => {
   return (
     <html lang='en'>
-      <body className="bg-dmBgVeryDarkBlue">
-        <Header />
-        <main className="app">
-          <ThemeContext>{children}</ThemeContext>
-        </main>
-      </body>
+      <ThemeContext>
+        <body className="bg-neutralWhite dark:bg-dmBgVeryDarkBlue">
+          <Header />
+          <main className="app">
+            {children}
+          </main>
+        </body>
+      </ThemeContext>
     </html>
   );
 }
