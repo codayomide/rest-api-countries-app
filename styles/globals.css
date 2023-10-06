@@ -17,25 +17,19 @@ input::-webkit-search-cancel-button {
 
 @layer components {
   .header_icons {
-    display: inline;
-    margin-right: 0.3rem;
+    @apply inline mr-[0.3rem];
   }
 
   .home__details-text {
-    font-weight: 600;
+    @apply font-semibold sm:text-sm;;
   }
 
   .country__details-text {
-    font-size: 14px;
+    @apply text-sm;
   }
 
   .country__details-text > span:first-child {
     font-weight: 600;
-  }
-
-  @screen sm {
-    .home__details-text {
-      font-size: 18px;
-    }
+    @apply font-semibold;
   }
 }
