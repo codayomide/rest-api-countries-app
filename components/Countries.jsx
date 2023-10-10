@@ -4,11 +4,12 @@ import React, { useContext } from "react";
 import Link from "next/link";
 import lowerCase from "@utils/utils";
 import { CountriesContext } from "@app/CountriesDataProvider";
+import LoadingAnimation from "./LoadingAnimation";
 
 const Countries = () => {
   const { countries, isLoading } = useContext(CountriesContext);
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <LoadingAnimation />;
 
   return (
     <div className="w-full flex flex-col items-center sm:flex-row flex-wrap justify-between py-9">
