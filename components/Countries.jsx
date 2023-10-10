@@ -1,6 +1,6 @@
+"use client"
+
 import React, { useContext } from 'react';
-// import Image from 'next/image';
-// import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import lowerCase from '@utils/utils';
 import { CountriesContext } from '@app/CountriesDataProvider';

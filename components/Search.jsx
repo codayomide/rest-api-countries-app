@@ -8,7 +8,7 @@ import lowerCase from '@utils/utils';
 const Search = () => {
   const [searchInput, setsearchInput] = useState('');
 
-  const { countries, filteredData, setFilteredData } = useContext(CountriesContext);
+  const { countries, setFilteredData } = useContext(CountriesContext);
 
   const handleSearch = (e) => {
     setsearchInput(e.target.value);
