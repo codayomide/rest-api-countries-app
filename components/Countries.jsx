@@ -1,52 +1,58 @@
-"use client"
+"use client";
 
-import React, { useContext } from 'react';
-import Link from 'next/link';
-import lowerCase from '@utils/utils';
-import { CountriesContext } from '@app/CountriesDataProvider';
+import React, { useContext } from "react";
+import Link from "next/link";
+import lowerCase from "@utils/utils";
+import { CountriesContext } from "@app/CountriesDataProvider";
 
 const Countries = () => {
   const { countries, isLoading } = useContext(CountriesContext);
 
+  if (isLoading) return <div>Loading...</div>;
+
   return (
     <div className="w-full flex flex-col items-center sm:flex-row flex-wrap justify-between py-9">
-      {!isLoading || countries.map((country, index) => (
-        <Link 
-          href={`/countries/${lowerCase(country.name)}`}
-          className="country__wrapper bg-neutralWhite dark:bg-dmBlue shadow-md flex flex-col w-[200px] ss:w-[250px] xs:w-[300px] md:w-[280px] aspect-[0.8] rounded-md mb-9 overflow-hidden" key={index}
-        >
-          <img 
-            src={country.flags.png} 
-            alt="" 
-            width={200}
-            height={100}
-            className="aspect-[1.7] w-full"
-          />
-          
-          <div className="flex flex-col flex-grow justify-center xs:justify-normal xs:mt-5 px-2">
-            <h1 className="font-extrabold text-lg xs:text-2xl my-1 xs:my-4">{country.name}</h1>
+      {countries &&
+        countries.map((country, index) => (
+          <Link
+            href={`/countries/${lowerCase(country.name)}`}
+            className="country__wrapper bg-neutralWhite dark:bg-dmBlue shadow-md flex flex-col w-[200px] ss:w-[250px] xs:w-[300px] md:w-[280px] aspect-[0.8] rounded-md mb-9 overflow-hidden"
+            key={index}
+          >
+            <img
+              src={country.flags.png}
+              alt=""
+              width={200}
+              height={100}
+              className="aspect-[1.7] w-full"
+            />
 
-            <div className="text-sm">
-              <p>
-                <span className="home__details-text">Population: </span>
-                <span>{country.population.toLocaleString('en-US')}</span>
-              </p>
-              
-              <p>
-                <span className="home__details-text">Region: </span>
-                <span>{country.region}</span>
-              </p>
-              
-              <p>
-                <span className="home__details-text">Capital: </span>
-                <span>{country.capital}</span>
-              </p>
+            <div className="flex flex-col flex-grow justify-center xs:justify-normal xs:mt-5 px-2">
+              <h1 className="font-extrabold text-lg xs:text-2xl my-1 xs:my-4">
+                {country.name}
+              </h1>
+
+              <div className="text-sm">
+                <p>
+                  <span className="home__details-text">Population: </span>
+                  <span>{country.population.toLocaleString("en-US")}</span>
+                </p>
+
+                <p>
+                  <span className="home__details-text">Region: </span>
+                  <span>{country.region}</span>
+                </p>
+
+                <p>
+                  <span className="home__details-text">Capital: </span>
+                  <span>{country.capital}</span>
+                </p>
+              </div>
             </div>
-          </div>
-        </Link>
-      ))}
+          </Link>
+        ))}
     </div>
   );
-}
- 
+};
+
 export default Countries;

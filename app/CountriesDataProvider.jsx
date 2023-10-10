@@ -14,7 +14,8 @@ export async function getServerSideProps() {
     countries = await res.json;
     isLoading = false;
   } catch (err) {
-    console.log(err); 
+    console.log(err);
+    isLoading = false;
   }
 
   return {
