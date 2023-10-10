@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 // import Image from 'next/image';
 // import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import lowerCase from '@utils/utils';
+import { CountriesContext } from '@app/CountriesDataProvider';
 
-const Countries = ({ countries }) => {
+const Countries = () => {
+  const { countries, isLoading } = useContext(CountriesContext);
+
   return (
     <div className="w-full flex flex-col items-center sm:flex-row flex-wrap justify-between py-9">
-      {countries.map((country, index) => (
+      {!isLoading || countries.map((country, index) => (
         <Link 
           href={`/countries/${lowerCase(country.name)}`}
           className="country__wrapper bg-neutralWhite dark:bg-dmBlue shadow-md flex flex-col w-[200px] ss:w-[250px] xs:w-[300px] md:w-[280px] aspect-[0.8] rounded-md mb-9 overflow-hidden" key={index}

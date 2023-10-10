@@ -1,7 +1,7 @@
 import Header from '@components/Header';
 import '@styles/globals.css'
 import React from 'react';
-import ThemeContext from './providers';
+import ThemeContext from './ThemeProvider';
 
 export const metadata = {
   title: "Rest Countries App",
@@ -12,7 +12,7 @@ const RootLayout = ({ children }) => {
   return (
     <html lang='en'>
       <ThemeContext>
-        <body className="bg-neutralWhite dark:bg-dmBgVeryDarkBlue">
+        <body className="bg-lmBgLightGray dark:bg-dmBgVeryDarkBlue">
           <Header />
           <main className="app">
             {children}
