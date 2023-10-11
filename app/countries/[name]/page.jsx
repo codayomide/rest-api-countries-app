@@ -18,7 +18,7 @@ const CountryDetailsPage = ({ params }) => {
           console.log(data[0].name)
         })
       } catch (err) {
-        console.log;
+        console.log(err);
       }
     };
     fetchData()

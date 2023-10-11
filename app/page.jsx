@@ -9,7 +9,6 @@ const Home = () => {
     <CountriesDataProvider>
       <div className="Home bg-lmBgLightGray dark:bg-dmBgVeryDarkBlue w-full h-fit px-4 xs:px-6 sm:px-12 xl:px-[65px] py-6">
         <SearchAndFilter />
-        {/* { isPending && <div>Loading...</div> } */}
         <Countries />
       </div>
     </CountriesDataProvider>
