@@ -12,9 +12,9 @@ const RootLayout = ({ children }) => {
   return (
     <html lang='en'>
       <ThemeContext>
-        <body className="bg-neutralWhite dark:bg-dmBgVeryDarkBlue">
+        <body className="bg-lmBgLightGray dark:bg-dmBgVeryDarkBlue min-h-screen flex flex-col">
           <Header />
-          <main className="app">
+          <main className="app flex-grow flex flex-col">
             {children}
           </main>
         </body>

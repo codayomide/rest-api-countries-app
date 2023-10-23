@@ -15,10 +15,9 @@ const CountryDetailsPage = ({ params }) => {
         .then((res) => res.json())
         .then((data) => {
           setCurrentCountry(data)
-          console.log(data[0].name)
         })
       } catch (err) {
-        console.log;
+        console.log(err);
       }
     };
     fetchData()
