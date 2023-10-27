@@ -14,14 +14,14 @@ const CountryDetails = ({ countryData }) => {
       <button onClick={goBack} className="text-lmVeryDarkBlue bg-neutralWhite dark:text-neutralWhite dark:bg-dmBlue shadow-lg rounded-sm px-5 py-1"><BsArrowLeft className="inline mr-1" /> Back</button>
 
       {countryData.map((country, index) => (
-        <div key={index} className="md:flex md:flex-row md:my-12">
+        <div key={index} className="md:flex md:flex-row md:my-12 py-6">
           <img src={country.flags.png} alt="This is a flag" className="aspect-[1.5] w-full md:w-[40%] lg:w-[38%] mb-9 md:mr-[100px] lg:mr-[150px]" />
 
           <div className="self-center">
-            <h1 className="text-xl font-extrabold mb-4">{country.name}</h1>
+            <h1 className="text-xl font-extrabold mb-8">{country.name}</h1>
             <div>
-              <div className="flex md:mb-8">
-                <div className="mb-8 mr-[100px]">
+              <div className="sm:flex md:mb-8">
+                <div className="mb-10 mr-[100px]">
                   <p className="country__details-text">
                     <span>Native Name: </span>
                     <span>{country.name}</span>

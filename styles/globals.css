@@ -25,7 +25,7 @@ input::-webkit-search-cancel-button {
   }
 
   .country__details-text {
-    @apply text-sm;
+    @apply text-sm mb-4;
   }
 
   .country__details-text > span:first-child {
