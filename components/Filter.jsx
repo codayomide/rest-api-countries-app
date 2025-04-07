@@ -1,30 +1,29 @@
-import React, { useEffect } from "react";
-
-import { useState } from "react";
+import React from "react";
 import lowerCase from "@utils/utils";
 import { useCountries } from "@utils/customHooks/CountriesContext";
 
 const Filter = () => {
-  const [selectedValue, setSelectedValue] = useState("");
-
   const { countries, setFilteredData } = useCountries();
 
   const handleSelectChange = (event) => {
     const newValue = event.target.value;
-    setSelectedValue(newValue);
-    console.log(selectedValue);
+
+    const filteredResults = countries.filter(
+      (country) => lowerCase(country.region) === lowerCase(newValue)
+    );
+    setFilteredData(filteredResults);
   };
 
-  useEffect(() => {
-    const filterFunction = () => {
-      const filteredResults = countries.filter(
-        (country) => lowerCase(country.region) === lowerCase(selectedValue)
-      );
-      setFilteredData(filteredResults);
-    };
+  // useEffect(() => {
+  //   const filterFunction = () => {
+  //     const filteredResults = countries.filter(
+  //       (country) => lowerCase(country.region) === lowerCase(selectedValue)
+  //     );
+  //     setFilteredData(filteredResults);
+  //   };
 
-    filterFunction();
-  }, [selectedValue]);
+  //   filterFunction();
+  // }, [selectedValue]);
 
   return (
     <div className="filterMenuContainer relative w-[70%] ss:w-[55%] md:w-[200px]">

@@ -1,9 +1,6 @@
 import Countries from "@components/Countries";
 import SearchAndFilter from "@components/SearchAndFilter";
-import {
-  CountriesProvider,
-  useCountries,
-} from "@utils/customHooks/CountriesContext";
+import { CountriesProvider } from "@utils/customHooks/CountriesContext";
 import React from "react";
 
 const getCountries = async () => {
