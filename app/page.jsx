@@ -1,6 +1,9 @@
 import Countries from "@components/Countries";
 import SearchAndFilter from "@components/SearchAndFilter";
-import { CountriesProvider } from "@utils/customHooks/CountriesContext";
+import {
+  CountriesProvider,
+  useCountries,
+} from "@utils/customHooks/CountriesContext";
 import React from "react";
 
 const getCountries = async () => {
@@ -20,7 +23,7 @@ const Home = async () => {
     <CountriesProvider countriesData={countries}>
       <div className="Home bg-lmBgLightGray dark:bg-dmBgVeryDarkBlue w-full h-full flex-grow flex flex-col px-4 xs:px-6 sm:px-12 xl:px-[65px] py-6 relative">
         <SearchAndFilter data={countries} />
-        <Countries countries={countries} />
+        <Countries />
       </div>
     </CountriesProvider>
   );
