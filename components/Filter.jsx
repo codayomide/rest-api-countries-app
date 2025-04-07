@@ -1,15 +1,13 @@
 import React, { useEffect } from "react";
 
-import { CountriesContext } from "@app/page";
-import { useContext, useState } from "react";
+import { useState } from "react";
 import lowerCase from "@utils/utils";
-// import { PiCaretDownBold } from 'react-icons/pi';
+import { useCountries } from "@utils/customHooks/CountriesContext";
 
 const Filter = () => {
   const [selectedValue, setSelectedValue] = useState("");
 
-  const { countries, setFilteredData, setIsFiltered } =
-    useContext(CountriesContext);
+  const { countries, setFilteredData } = useCountries();
 
   const handleSelectChange = (event) => {
     const newValue = event.target.value;
@@ -23,7 +21,6 @@ const Filter = () => {
         (country) => lowerCase(country.region) === lowerCase(selectedValue)
       );
       setFilteredData(filteredResults);
-      setIsFiltered(true);
     };
 
     filterFunction();
@@ -43,8 +40,6 @@ const Filter = () => {
         <option value="oceania">Oceania</option>
         <option value="polar">Polar</option>
       </select>
-
-      {/* <PiCaretDownBold className="absolute top-[50%] translate-y-[-50%] right-4" /> */}
     </div>
   );
 };
