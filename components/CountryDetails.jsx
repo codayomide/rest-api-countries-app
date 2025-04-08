@@ -1,3 +1,5 @@
+"use client"
+
 import React from "react";
 import { BsArrowLeft } from "react-icons/bs";
 import BorderCountries from "./BorderCountries";
@@ -10,6 +12,7 @@ const CountryDetails = ({ countryData }) => {
   const goBack = () => {
     router.back();
   };
+
   return (
     <div className="p-4 xs:p-6 sm:p-12 xl:p-[65px]">
       <button
