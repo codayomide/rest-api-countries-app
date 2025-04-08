@@ -5,6 +5,7 @@ import React from "react";
 import Link from "next/link";
 import lowerCase from "@utils/utils";
 import { useCountries } from "@utils/customHooks/CountriesContext";
+import Image from "@node_modules/next/image";
 
 const Countries = () => {
   const { filteredData: countries } = useCountries();
@@ -16,7 +17,7 @@ const Countries = () => {
           className="country__wrapper bg-neutralWhite dark:bg-dmBlue shadow-md flex flex-col w-full xs:w-[350px] sm:w-[250px] md:w-[300px] xl:w-[280px] aspect-[0.85] sm:aspect-[0.75] rounded-md mb-9 overflow-hidden"
           key={index}
         >
-          <img
+          <Image
             src={country.flags.png}
             alt=""
             width={200}
